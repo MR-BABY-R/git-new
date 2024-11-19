@@ -1,0 +1,65 @@
+
+shiva@SHIVA MINGW64 ~ (master)
+$ cd RAJE
+bash: cd: RAJE: No such file or directory
+
+shiva@SHIVA MINGW64 ~ (master)
+$ mkdir RAJE
+
+shiva@SHIVA MINGW64 ~ (master)
+$ touch 2.txt
+
+shiva@SHIVA MINGW64 ~ (master)
+$ cd RAJE
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git init
+Initialized empty Git repository in C:/Users/shiva/RAJE/.git/
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ touch 2.txt
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ notepad 2.txt
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git add .
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git commit -m "3rd exp"
+[master (root-commit) a803bce] 3rd exp
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ touch 3.txt
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ notepad 3.txt
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git add .
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git stash save "OSMAN"
+Saved working directory and index state On master: OSMAN
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git stash list
+stash@{0}: On master: OSMAN
+
+shiva@SHIVA MINGW64 ~/RAJE (master)
+$ git checkout -b new-branch
+Switched to a new branch 'new-branch'
+
+shiva@SHIVA MINGW64 ~/RAJE (new-branch)
+$ git stash apply
+On branch new-branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   3.txt
