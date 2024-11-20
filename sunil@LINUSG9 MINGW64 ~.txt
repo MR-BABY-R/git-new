@@ -1,0 +1,125 @@
+sunil@LINUSG9 MINGW64 ~
+$ cd sun
+
+sunil@LINUSG9 MINGW64 ~/sun (feature-branch)
+$ ls
+ 1   2.txt  'Cast Iron.txt'   exp4steps   manual4   new1   readme.txt
+
+sunil@LINUSG9 MINGW64 ~/sun (feature-branch)
+$ cd cy029
+bash: cd: cy029: No such file or directory
+
+sunil@LINUSG9 MINGW64 ~/sun (feature-branch)
+$ cd
+
+sunil@LINUSG9 MINGW64 ~
+$ cd cy029
+bash: cd: cy029: No such file or directory
+
+sunil@LINUSG9 MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/sunil/.git/
+
+sunil@LINUSG9 MINGW64 ~ (master)
+$ cd cy029
+bash: cd: cy029: No such file or directory
+
+sunil@LINUSG9 MINGW64 ~ (master)
+$ cd
+
+sunil@LINUSG9 MINGW64 ~ (master)
+$ cd cy017
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ ls
+file1.txt  file2.txt  file3.txt  file4.txt  luxmee/
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ touch 5.txt
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ notepad 5.txt
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git add 5.txt
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git stash save "aaa"
+Saved working directory and index state On master: aaa
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git checkout master
+Already on 'master'
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git checkout -b sun
+Switched to a new branch 'sun'
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git status
+On branch sun
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luxmee/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git checkout master
+Switched to branch 'master'
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git stash apply\
+> ^C
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git stash apply
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   5.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luxmee/
+
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git commit -m "stash messsage"
+[master fa0211d] stash messsage
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5.txt
+
+sunil@LINUSG9 MINGW64 ~/cy017 (master)
+$ git checkout sun
+Switched to branch 'sun'
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git stash pop
+On branch sun
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   5.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luxmee/
+
+Dropped refs/stash@{0} (9b675c4ecf90cacaef774d73cead3b3dd235422a)
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git stash show
+ file4.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git stash push -m "asssss"
+Saved working directory and index state On sun: asssss
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$ git stash list
+stash@{0}: On sun: asssss
+stash@{1}: On feature-branch: again stash message
+
+sunil@LINUSG9 MINGW64 ~/cy017 (sun)
+$
